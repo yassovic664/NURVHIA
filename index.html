@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d1b">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="NURVHIA LTD creates thoughtful Android apps. Discover AetherSX2 Emulator, an Android PS2 emulation experience with customizable controls, graphics, save states and game library tools.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NURVHIA — Mobile experiences with more control">
+  <meta property="og:description" content="Discover Android apps from NURVHIA LTD, including AetherSX2 Emulator.">
+  <meta property="og:image" content="https://play-lh.googleusercontent.com/DZNp3MoV4EB7mz2E3-UuAdwlufzRNqQB9Ymn-J0wJPE_Azq04fXS6CpnBJeRlEmJVvtGQagcJnLz1ldGwUWRlg=w526-h296">
+  <meta name="author" content="NURVHIA LTD">
+  <title>NURVHIA — Android App Developer</title>
+  <style>
+    :root {
+      --bg:#080d1b;--bg2:#0b1224;--panel:#101a30;--panel2:#131f36;
+      --text:#f4f7ff;--muted:#a6b5cf;--line:rgba(165,195,255,.13);
+      --blue:#458bff;--cyan:#51ddfb;--purple:#9371fb;--shadow:0 28px 90px rgba(0,0,0,.28);
+      --radius:22px;--container:1170px;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:100px}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.62;overflow-x:hidden}
+    body::before{content:"";position:absolute;z-index:-1;top:-280px;right:-270px;width:900px;height:850px;background:radial-gradient(circle,rgba(23,75,188,.2),transparent 62%);pointer-events:none}
+    a{color:inherit;text-decoration:none}button{font:inherit}img{display:block;max-width:100%}
+    a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #6fe4ff;outline-offset:5px}
+    ::selection{background:#4389e1;color:white}
+    .container{max-width:var(--container);margin:auto;padding:0 25px}
+    .nav-wrap{position:sticky;z-index:40;top:0;background:rgba(8,13,27,.84);border-bottom:1px solid var(--line);backdrop-filter:blur(17px);-webkit-backdrop-filter:blur(17px)}
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{display:inline-flex;align-items:center;gap:11px;white-space:nowrap;font-weight:860;letter-spacing:.055em;font-size:20px}
+    .logo-mark{width:36px;height:36px;display:grid;place-items:center;border:1px solid rgba(118,185,255,.35);border-radius:11px;background:linear-gradient(150deg,#1f4eaa,#12203c);box-shadow:inset 0 0 18px #244caf55,0 0 22px #3e7bfb22}
+    .logo-mark svg{width:24px;height:24px}
+    .nav-links{display:flex;align-items:center;gap:33px}
+    .nav-links>a:not(.nav-cta){font-size:13px;font-weight:650;color:#b4c1d7;transition:color .2s}
+    .nav-links>a:not(.nav-cta):hover{color:white}
+    .nav-cta{display:inline-flex;align-items:center;gap:8px;padding:11px 17px;border-radius:11px;border:1px solid #3d69ab;background:#183466;color:#fff;font-size:13px;font-weight:750;transition:.2s}
+    .nav-cta:hover{background:#1d468c;transform:translateY(-2px)}
+    .icon{width:19px;height:19px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;flex:none}
+    .menu-toggle{display:none;background:none;border:1px solid var(--line);color:white;padding:9px;border-radius:10px;cursor:pointer}
+    .hero{position:relative;overflow:hidden;padding:95px 0 112px}
+    .hero::after{content:"";position:absolute;pointer-events:none;z-index:-1;inset:0;background-image:linear-gradient(#8db5ff06 1px,transparent 1px),linear-gradient(90deg,#8db5ff06 1px,transparent 1px);background-size:55px 55px;mask-image:linear-gradient(to bottom,#0000,#000 45%,#0000)}
+    .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;align-items:center;gap:60px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:790;text-transform:uppercase;letter-spacing:.15em;color:#9bcbff}
+    .eyebrow .pulse{width:7px;height:7px;border-radius:50%;background:#60dafb;box-shadow:0 0 0 5px #43b9ee20,0 0 16px #43b9ee55}
+    h1,h2,h3,p{margin-top:0}
+    h1{font-size:clamp(48px,5.3vw,75px);letter-spacing:-.064em;line-height:1.08;margin:25px 0 24px;font-weight:820;max-width:720px}
+    .gradient-text{background:linear-gradient(96deg,#6daeff,#68e3f9 50%,#a69aff);background-clip:text;-webkit-background-clip:text;color:transparent}
+    .hero-copy{font-size:16px;color:var(--muted);max-width:560px;line-height:1.85}
+    .button-row{display:flex;align-items:center;flex-wrap:wrap;gap:13px;margin-top:32px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:11px;border-radius:12px;padding:15px 21px;font-size:14px;font-weight:760;transition:transform .2s,box-shadow .2s,background .2s;border:1px solid transparent}
+    .btn:hover{transform:translateY(-3px)}
+    .btn-primary{color:#081025;background:linear-gradient(110deg,#7fbeff,#64e4f9);box-shadow:0 8px 38px #419cfd29}
+    .btn-primary:hover{box-shadow:0 10px 40px #4bafff50}
+    .btn-outline{color:#e8f0ff;border-color:#40506b;background:#ffffff05}
+    .btn-outline:hover{background:#ffffff0d}
+    .hero-meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:37px;color:#b6c4d8;font-size:12px}
+    .hero-meta span{display:inline-flex;align-items:center;gap:7px}
+    .hero-meta svg{color:#72d8ef;width:15px;height:15px}
+    .hero-visual{position:relative;min-width:0}
+    .hero-visual::before{content:"";position:absolute;z-index:0;width:88%;height:82%;top:10%;left:7%;filter:blur(65px);background:radial-gradient(circle,#2466c56b,#39207817 70%,transparent);pointer-events:none}
+    .hero-card{position:relative;overflow:hidden;padding:17px;background:linear-gradient(145deg,#1b304f,#0d162a 74%);border:1px solid #6384b651;border-radius:25px;box-shadow:var(--shadow);transform:rotate(1.5deg)}
+    .hero-card::before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(132,203,255,.08),transparent 50%);pointer-events:none}
+    .card-top{position:relative;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:3px 4px 18px}
+    .app-id{display:flex;align-items:center;gap:12px;min-width:0}
+    .app-icon{width:53px;height:53px;border-radius:13px;background:#f6f7ff;object-fit:cover;border:1px solid #ffffff20;box-shadow:0 6px 30px #0005}
+    .app-id strong{font-size:15px;display:block;line-height:1.2}.app-id small{color:#a5b8d4;font-size:11px}
+    .live-tag{padding:7px 10px;border-radius:99px;background:#53bfa31a;border:1px solid #4bdcab3c;color:#7af3cd;font-size:10px;letter-spacing:.12em;font-weight:800;white-space:nowrap}
+    .hero-shot{aspect-ratio:526/296;border-radius:14px;overflow:hidden;background:linear-gradient(120deg,#081e45,#124bab 50%,#060f27);border:1px solid #ffffff20;display:grid;place-items:center}
+    .hero-shot img{width:100%;height:100%;object-fit:cover}
+    .card-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 6px 2px}
+    .card-bottom span{font-size:11px;color:#a7b6cf}.card-bottom strong{font-size:12px;color:#cee6ff}
+    .float-card{position:absolute;z-index:3;left:-36px;bottom:-28px;max-width:240px;display:flex;align-items:center;gap:12px;background:rgba(17,31,55,.98);border:1px solid #446a9a;border-radius:15px;padding:14px 16px;box-shadow:0 17px 35px #02071185;transform:rotate(-2deg)}
+    .float-icon{width:39px;height:39px;display:grid;place-items:center;color:#5cdefd;background:#47b2e31d;border-radius:11px}.float-card strong{display:block;font-size:12px}.float-card small{display:block;color:var(--muted);font-size:11px}
+    .section{padding:96px 0}.section-alt{background:linear-gradient(180deg,#0a1121 0%,#0e1729 100%);border-block:1px solid var(--line)}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:37px}
+    .kicker{display:block;color:#74bbff;font-size:11px;font-weight:850;letter-spacing:.17em;text-transform:uppercase;margin-bottom:14px}
+    h2{font-size:clamp(33px,3.8vw,48px);line-height:1.16;letter-spacing:-.046em;margin-bottom:13px;font-weight:800}
+    .section-intro{color:var(--muted);font-size:14px;line-height:1.8;max-width:490px;margin:0}
+    .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .feature{padding:27px 25px;background:linear-gradient(148deg,#131f36,#0d1628);border:1px solid var(--line);border-radius:17px;transition:transform .25s,border-color .25s;min-height:230px}
+    .feature:hover{transform:translateY(-5px);border-color:#5294d770}
+    .feature-icon{width:47px;height:47px;border-radius:13px;display:grid;place-items:center;background:#448eff17;border:1px solid #5284bd30;color:#83c9ff;margin-bottom:22px}
+    .feature-icon .icon{width:23px;height:23px}
+    .feature h3{font-size:16px;letter-spacing:-.02em;margin:0 0 9px;font-weight:740}.feature p{color:#aebdd2;font-size:13px;line-height:1.77;margin:0}
+    .showcase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .shot-card{display:block;overflow:hidden;border:1px solid #293a57;border-radius:16px;background:#111b30;transition:transform .25s,border-color .25s;min-width:0}
+    .shot-card:hover{transform:translateY(-5px);border-color:#6db8fb}
+    .shot-image{aspect-ratio:526/296;background:linear-gradient(135deg,#173d91,#0e1833);overflow:hidden}
+    .shot-image img{width:100%;height:100%;object-fit:cover;transition:transform .4s}.shot-card:hover img{transform:scale(1.04)}
+    .shot-info{padding:19px 20px 20px}.shot-info strong{display:block;font-size:14px}.shot-info span{font-size:12px;color:var(--muted);display:block;margin-top:5px}
+    .studio-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:55px}
+    .studio-card{border-radius:23px;position:relative;padding:40px 36px;min-height:320px;background:linear-gradient(145deg,#182b4a,#0b152a);border:1px solid #5576a94c;overflow:hidden}
+    .studio-card::before{content:"";width:280px;height:280px;border:1px solid #5a82b42e;border-radius:50%;position:absolute;right:-80px;top:-115px;box-shadow:0 0 0 45px #5a82b415,0 0 0 90px #5a82b40d}
+    .studio-card-label{font-size:11px;color:#97bce9;letter-spacing:.13em;text-transform:uppercase}
+    .studio-wordmark{font-size:clamp(34px,4vw,57px);font-weight:900;letter-spacing:-.06em;line-height:1.05;margin-top:40px}
+    .studio-wordmark span{color:#7acdfd}.studio-card p{position:relative;color:#b2c3db;font-size:13px;margin:15px 0 0;max-width:280px}
+    .studio-copy p{font-size:15px;color:var(--muted);max-width:520px}
+    .studio-points{display:flex;flex-direction:column;gap:13px;margin-top:26px}
+    .studio-point{display:flex;gap:11px;align-items:start;color:#dce8f7;font-size:13px}
+    .studio-point .icon{color:#7bcfff;width:18px;height:18px;margin-top:2px}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:35px}
+    .step{position:relative;padding:23px 20px 21px;border-top:1px solid #4d6ca5;background:linear-gradient(180deg,#121d31,#0c1425);border-radius:0 0 13px 13px}
+    .step-no{color:#67b9ff;font-weight:900;font-size:22px;letter-spacing:-.05em;line-height:1}.step h3{margin:16px 0 7px;font-size:15px}.step p{font-size:13px;color:var(--muted);margin:0}
+    .faq{display:grid;grid-template-columns:1fr 1.3fr;gap:60px;align-items:start}
+    details{background:linear-gradient(120deg,#111b30,#0d1629);border:1px solid var(--line);border-radius:13px;padding:0 20px;margin-bottom:11px}
+    summary{display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;padding:17px 0;list-style:none;font-size:14px;font-weight:700}
+    summary::-webkit-details-marker{display:none}summary::after{content:"+";font-size:24px;line-height:1;color:#76c8fa;font-weight:350}
+    details[open] summary::after{content:"−"}details p{font-size:13px;color:var(--muted);padding:0 0 17px;margin:0;line-height:1.8}
+    .contact-card{display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center;background:linear-gradient(125deg,#162b4c,#132448 45%,#101b34);border:1px solid #517aaf59;border-radius:23px;padding:49px 52px;box-shadow:0 25px 80px #03071360;position:relative;overflow:hidden}
+    .contact-card::after{content:"";pointer-events:none;position:absolute;width:280px;height:280px;right:-130px;top:-150px;background:radial-gradient(circle,#58b2ff4b,transparent 65%)}
+    .contact-card h2{margin:8px 0 16px}.contact-card p{color:var(--muted);max-width:470px;font-size:14px;margin-bottom:25px}
+    .contact-info{display:flex;flex-direction:column;gap:19px;position:relative}
+    .contact-line{display:flex;align-items:start;gap:13px;font-size:13px}
+    .contact-line .icon{color:#75c1fc;margin-top:2px}.contact-line small{display:block;color:#97aac8;margin-bottom:2px;font-size:11px}.contact-line a:hover{color:#75cefb}
+    .footer{border-top:1px solid var(--line);padding:31px 0 36px}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:25px;flex-wrap:wrap}
+    .footer-left{font-size:12px;color:#8ea3c0}.footer-links{display:flex;gap:22px;flex-wrap:wrap;font-size:12px;color:#a6b8d4}
+    .footer-links a:hover{color:white}.disclaimer{margin-top:20px;color:#70829e;font-size:11px;max-width:1000px;line-height:1.7}
+    .visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+    @media(max-width:1000px){.hero-grid{gap:32px}.hero{padding:73px 0 105px}.float-card{left:-9px;bottom:-23px}.section{padding:78px 0}}
+    @media(max-width:790px){
+      .menu-toggle{display:inline-flex}.nav-links{display:none;position:absolute;top:78px;left:0;right:0;background:#0b1427;border-bottom:1px solid var(--line);padding:21px 25px 24px;flex-direction:column;align-items:stretch;gap:17px}
+      .nav-links.open{display:flex}.nav-links a:not(.nav-cta){padding:6px 0}.nav-links .nav-cta{justify-content:center}
+      .hero-grid,.studio-grid,.faq,.contact-card{grid-template-columns:1fr}.hero-grid{gap:55px}.hero-copy{max-width:650px}.hero-visual{max-width:590px;width:100%;margin:0 auto}.float-card{left:0}
+      .feature-grid{grid-template-columns:repeat(2,1fr)}.showcase-grid{grid-template-columns:repeat(2,1fr)}.showcase-grid .shot-card:last-child{grid-column:span 2;max-width:500px;width:100%;margin:auto}
+      .studio-grid{gap:30px}.studio-card{min-height:260px}.faq{gap:28px}.contact-card{padding:38px}
+    }
+    @media(max-width:550px){
+      .container{padding:0 19px}.nav{height:70px}.nav-links{top:70px}.logo{font-size:18px}.hero{padding:62px 0 79px}.hero-grid{gap:52px}
+      h1{font-size:clamp(43px,12vw,57px);margin:19px 0 20px}.hero-copy{font-size:14px}.hero-meta{gap:12px;font-size:11px}
+      .button-row{flex-direction:column;align-items:stretch}.button-row .btn{width:100%}.hero-card{padding:12px}.app-id strong{font-size:13px}.app-icon{width:43px;height:43px}.live-tag{font-size:9px;padding:6px 8px}.card-top{padding-bottom:13px}.card-bottom span{font-size:9px}.float-card{position:relative;left:11px;bottom:auto;margin-top:-1px;max-width:248px;padding:10px 13px}
+      .section{padding:65px 0}.section-head{display:block;margin-bottom:27px}.section-intro{margin-top:13px}.feature-grid,.showcase-grid,.steps{grid-template-columns:1fr}.feature{min-height:0;padding:24px}.showcase-grid .shot-card:last-child{grid-column:auto;max-width:none}.studio-card{padding:35px 25px}.studio-wordmark{font-size:42px}.steps{gap:13px}.contact-card{padding:29px 22px;gap:18px}.contact-card h2{font-size:33px}.footer-inner{align-items:start;flex-direction:column;gap:15px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M12 5h7v7M19 5l-9 9M19 13v6H5V5h6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v9H3z"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 22h8m-4-4v4"/></symbol>
+    <symbol id="i-save" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M7 3v7h10V4M7 21v-8h10v8"/></symbol>
+    <symbol id="i-gamepad" viewBox="0 0 24 24"><path d="M6 9h12a4 4 0 0 1 3.9 3.1l.9 4.7a2.6 2.6 0 0 1-4.2 2.5l-2.7-2.3H8.1l-2.7 2.3a2.6 2.6 0 0 1-4.2-2.5l.9-4.7A4 4 0 0 1 6 9Z"/><path d="M6 13h5m-2.5-2.5v5M16.5 12.3h.01M19 14.5h.01"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2" fill="#101a30"/><circle cx="16" cy="12" r="2" fill="#101a30"/><circle cx="10" cy="18" r="2" fill="#101a30"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3 1.8 6.2L20 11l-6.2 1.8L12 19l-1.8-6.2L4 11l6.2-1.8L12 3ZM19 17l.8 2.2L22 20l-2.2.8L19 23l-.8-2.2L16 20l2.2-.8L19 17Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5.5 3h4l1.5 5-2.6 2a16 16 0 0 0 5.6 5.6l2-2.6 5 1.5v4A2.5 2.5 0 0 1 18.5 21 15.5 15.5 0 0 1 3 5.5 2.5 2.5 0 0 1 5.5 3Z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5.2 3.5 8.7 8 11 4.5-2.3 8-5.8 8-11V5Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m7 4 14 8-14 8z"/></symbol>
+  </svg>
+
+  <header class="nav-wrap">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#home" class="logo" aria-label="NURVHIA home">
+        <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="m16 3 12 7v12l-12 7L4 22V10L16 3Z" stroke="#95D5FF" stroke-width="1.6"/><path d="m4 10 12 7 12-7M16 17v12" stroke="#61B5FF" stroke-width="1.6"/><path d="m16 3 12 7-12 7L4 10 16 3Z" fill="#77ADFF" opacity=".22"/></svg></span>
+        NURVHIA
+      </a>
+      <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links"><svg class="icon"><use href="#i-menu"/></svg></button>
+      <div class="nav-links" id="nav-links">
+        <a href="#apps">Our App</a><a href="#features">Features</a><a href="#about">About Us</a><a href="#contact">Contact</a>
+        <a class="nav-cta" href="https://play.google.com/store/apps/developer?id=NURVHIA" target="_blank" rel="noopener noreferrer">Google Play <svg class="icon" style="width:15px;height:15px"><use href="#i-external"/></svg></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span class="pulse"></span> Android apps by NURVHIA LTD</div>
+          <h1>Bring classic gaming <span class="gradient-text">into your world.</span></h1>
+          <p class="hero-copy">We create mobile experiences that put flexibility and control first. Discover AetherSX2 Emulator — an Android emulation experience with a thoughtfully organized library, powerful graphics options and customizable gameplay controls.</p>
+          <div class="button-row">
+            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.aetherplayy.emulatorinapp" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-play"/></svg> Get the app on Google Play <svg class="icon"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-outline" href="#features">Explore features <svg class="icon"><use href="#i-arrow"/></svg></a>
+          </div>
+          <div class="hero-meta"><span><svg class="icon"><use href="#i-check"/></svg> Built for Android</span><span><svg class="icon"><use href="#i-check"/></svg> Configurable experience</span><span><svg class="icon"><use href="#i-check"/></svg> Controller support</span></div>
+        </div>
+        <div class="hero-visual" id="apps">
+          <div class="hero-card">
+            <div class="card-top">
+              <div class="app-id"><img class="app-icon" src="https://play-lh.googleusercontent.com/25jpZ4JWMSo66_71nkBWcRfUD3w1nnEthYE6cRcKwss4DiMpSDXE7UlsQGm-dEp6vWc5shuGoc3LMlqv9l3c=w240-h480" alt="AetherSX2 Emulator app icon" width="53" height="53" loading="eager"><div><strong>AetherSX2 Emulator</strong><small>by NURVHIA</small></div></div>
+              <span class="live-tag">ON GOOGLE PLAY</span>
+            </div>
+            <div class="hero-shot"><img src="https://play-lh.googleusercontent.com/ZMih6Pe-ccrO3PKmgAAPWVn_GQmk_PB0gIs20KPfdP6MH26BuPyNjFaFvrx9Ot4mRwlTtUVHRlyn9GWDMSyDUQ=w526-h296" alt="Promotional screenshot from AetherSX2 Emulator's Google Play listing" width="526" height="296" fetchpriority="high"></div>
+            <div class="card-bottom"><span>Featured Android application</span><strong>Explore • Configure • Play</strong></div>
+          </div>
+          <div class="float-card"><span class="float-icon"><svg class="icon"><use href="#i-gamepad"/></svg></span><div><strong>Made for flexible play</strong><small>Touchscreen &amp; gamepad options</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="features">
+      <div class="container">
+        <div class="section-head"><div><span class="kicker">Explore AetherSX2 Emulator</span><h2>Powerful tools. <span class="gradient-text">Your way to play.</span></h2></div><p class="section-intro">From the first game you add to your preferred graphics setup, the app gives you tools to make each session your own.</p></div>
+        <div class="feature-grid">
+          <article class="feature"><div class="feature-icon"><svg class="icon"><use href="#i-folder"/></svg></div><h3>Organized game library</h3><p>Browse cover artwork, search titles and manage multiple game folders from a dedicated library view.</p></article>
+          <article class="feature"><div class="feature-icon"><svg class="icon"><use href="#i-monitor"/></svg></div><h3>Flexible graphics</h3><p>Choose Vulkan or OpenGL, adjust scaling and fine-tune visual settings for compatible games and hardware.</p></article>
+          <article class="feature"><div class="feature-icon"><svg class="icon"><use href="#i-save"/></svg></div><h3>Save states &amp; memory cards</h3><p>Keep track of your progress with save state slots and virtual memory card management.</p></article>
+          <article class="feature"><div class="feature-icon"><svg class="icon"><use href="#i-gamepad"/></svg></div><h3>Controls that fit</h3><p>Use Bluetooth or USB controllers, or customize the touchscreen control layout to your liking.</p></article>
+          <article class="feature"><div class="feature-icon"><svg class="icon"><use href="#i-sliders"/></svg></div><h3>Per-game configuration</h3><p>Set individual game preferences without changing the options you use for the rest of your collection.</p></article>
+          <article class="feature"><div class="feature-icon"><svg class="icon"><use href="#i-sparkles"/></svg></div><h3>Extra customization</h3><p>Explore texture pack options, cheat support and achievements where available.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-head"><div><span class="kicker">A closer look</span><h2>Explore the experience.</h2></div><p class="section-intro">App promotional visuals as featured on the official NURVHIA Google Play listing.</p></div>
+        <div class="showcase-grid">
+          <a class="shot-card" href="https://play.google.com/store/apps/details?id=com.aetherplayy.emulatorinapp" target="_blank" rel="noopener noreferrer"><div class="shot-image"><img src="https://play-lh.googleusercontent.com/DZNp3MoV4EB7mz2E3-UuAdwlufzRNqQB9Ymn-J0wJPE_Azq04fXS6CpnBJeRlEmJVvtGQagcJnLz1ldGwUWRlg=w526-h296" alt="Promotional racing visual from Google Play listing" width="526" height="296" loading="lazy"></div><div class="shot-info"><strong>Classic racing experiences</strong><span>View the app on Google Play</span></div></a>
+          <a class="shot-card" href="https://play.google.com/store/apps/details?id=com.aetherplayy.emulatorinapp" target="_blank" rel="noopener noreferrer"><div class="shot-image"><img src="https://play-lh.googleusercontent.com/AfUP6Z-1CCjUjx9ozXHnMo5zilPIsv9xmPxkxjhIU4PPZM5jeso9TKp1iAUxOFwTijFRYWs5q01MN_YoC2A0=w526-h296" alt="Adventure-themed promotional visual from Google Play listing" width="526" height="296" loading="lazy"></div><div class="shot-info"><strong>Timeless adventures</strong><span>View the app on Google Play</span></div></a>
+          <a class="shot-card" href="https://play.google.com/store/apps/details?id=com.aetherplayy.emulatorinapp" target="_blank" rel="noopener noreferrer"><div class="shot-image"><img src="https://play-lh.googleusercontent.com/ZMih6Pe-ccrO3PKmgAAPWVn_GQmk_PB0gIs20KPfdP6MH26BuPyNjFaFvrx9Ot4mRwlTtUVHRlyn9GWDMSyDUQ=w526-h296" alt="Promotional street racing visual from Google Play listing" width="526" height="296" loading="lazy"></div><div class="shot-info"><strong>Classic gameplay on mobile</strong><span>View the app on Google Play</span></div></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="about">
+      <div class="container studio-grid">
+        <div class="studio-card"><div class="studio-card-label">Independent Android developer</div><div class="studio-wordmark">NUR<span>VHIA</span><br><span style="color:#e8f2ff;font-size:.45em;letter-spacing:.12em">LTD</span></div><p>Mobile software experiences designed with an emphasis on choice, flexibility and usability.</p></div>
+        <div class="studio-copy"><span class="kicker">About our studio</span><h2>Thoughtful apps for <span class="gradient-text">everyday explorers.</span></h2><p>NURVHIA LTD is the developer listed for AetherSX2 Emulator on Google Play. We focus on presenting a clear, adaptable Android experience with practical features and easy access to support.</p>
+          <div class="studio-points"><div class="studio-point"><svg class="icon"><use href="#i-check"/></svg> Official app listing accessible directly on Google Play</div><div class="studio-point"><svg class="icon"><use href="#i-check"/></svg> Feature-rich settings and customization options</div><div class="studio-point"><svg class="icon"><use href="#i-check"/></svg> Dedicated contact and privacy information</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="start">
+      <div class="container"><span class="kicker">Getting started</span><h2>Three simple steps.</h2><p class="section-intro">Find the app, set up your library and make the experience your own.</p>
+        <div class="steps"><article class="step"><div class="step-no">01</div><h3>Get the Android app</h3><p>Open the official Google Play listing for AetherSX2 Emulator.</p></article><article class="step"><div class="step-no">02</div><h3>Set up your library</h3><p>Follow the app's setup flow and add compatible game files that you are legally entitled to use.</p></article><article class="step"><div class="step-no">03</div><h3>Personalize your controls</h3><p>Explore graphics, input and per-game options based on your device and preferences.</p></article></div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="faq">
+      <div class="container faq"><div><span class="kicker">Good to know</span><h2>Frequently asked questions.</h2><p class="section-intro">Useful information before getting started. For app-specific questions, the support team can be reached by email.</p></div>
+        <div><details><summary>Where can I download AetherSX2 Emulator?</summary><p>Use the official <a href="https://play.google.com/store/apps/details?id=com.aetherplayy.emulatorinapp" target="_blank" rel="noopener noreferrer" style="color:#81c7ff;text-decoration:underline">Google Play listing</a>. This website does not distribute APK files.</p></details>
+          <details><summary>Are games or system files provided on this website?</summary><p>No. This website does not offer game downloads, BIOS files or other proprietary system files. Use only game content and system files you are legally authorized to use.</p></details>
+          <details><summary>Will every game run on every Android device?</summary><p>Emulation performance and compatibility depend on the device, game and settings. Consult the current Google Play listing for app details.</p></details>
+          <details><summary>How can I contact the developer?</summary><p>Send a message to <a href="mailto:mardozak@gmail.com" style="color:#81c7ff">mardozak@gmail.com</a> or visit the contact section below.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact"><div class="container"><div class="contact-card"><div><span class="kicker">Get in touch</span><h2>Have a question?<br><span class="gradient-text">We're here to help.</span></h2><p>For app inquiries, support requests or business correspondence, contact NURVHIA LTD through the details published with our Google Play app.</p><a class="btn btn-primary" href="mailto:mardozak@gmail.com?subject=NURVHIA%20App%20Inquiry"><svg class="icon"><use href="#i-mail"/></svg> Contact by email <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+        <div class="contact-info"><div class="contact-line"><svg class="icon"><use href="#i-mail"/></svg><div><small>Support email</small><a href="mailto:mardozak@gmail.com">mardozak@gmail.com</a></div></div>
+          <div class="contact-line"><svg class="icon"><use href="#i-phone"/></svg><div><small>Developer contact phone</small><a href="tel:+447427856211">+44 7427 856211</a></div></div>
+          <div class="contact-line"><svg class="icon"><use href="#i-pin"/></svg><div><small>Business contact address (Google Play)</small>13 Dean Court, Rochdale, OL11 1TX<br>United Kingdom</div></div>
+          <div class="contact-line"><svg class="icon"><use href="#i-shield"/></svg><div><small>Privacy information</small><a href="https://sites.google.com/view/aethersx22/home" target="_blank" rel="noopener noreferrer">Read the app privacy policy</a></div></div>
+        </div>
+      </div></div></section>
+  </main>
+
+  <footer class="footer"><div class="container"><div class="footer-inner"><div class="footer-left">© <span id="year">2026</span> NURVHIA LTD. All rights reserved.</div><div class="footer-links"><a href="#home">Back to top</a><a href="https://play.google.com/store/apps/developer?id=NURVHIA" target="_blank" rel="noopener noreferrer">Developer on Google Play</a><a href="https://sites.google.com/view/aethersx22/home" target="_blank" rel="noopener noreferrer">Privacy Policy</a><a href="mailto:mardozak@gmail.com">Support</a></div></div><p class="disclaimer">NURVHIA and this website are independent from Sony Interactive Entertainment. PlayStation and PS2 are trademarks of their respective owners. App features, availability and compatibility may change; see the current Google Play listing for details. Screenshots are promotional visuals from the linked app listing.</p></div></footer>
+
+  <script>
+    (function(){
+      var toggle=document.querySelector('.menu-toggle'), links=document.getElementById('nav-links');
+      if(toggle&&links){
+        toggle.addEventListener('click',function(){var isOpen=links.classList.toggle('open');toggle.setAttribute('aria-expanded',String(isOpen));toggle.setAttribute('aria-label',isOpen?'Close navigation menu':'Open navigation menu')});
+        links.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){links.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open navigation menu')})});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape'){links.classList.remove('open');toggle.setAttribute('aria-expanded','false')}});
+      }
+      var year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();
+    }());
+  </script>
+</body>
+</html>
